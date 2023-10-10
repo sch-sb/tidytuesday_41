@@ -27,7 +27,6 @@ top_10_words_by_state <- word_frequencies %>%
 us_map <- map_data("state")
 
 
-# Then, join the two dataframes on the state/region column
 map_data_joined <- left_join(us_map, top_10_words_by_state, by = c("region" = "state"))
 final_map_data <- left_join(map_data_joined, state_counts, by = c("region" = "state"))
 
